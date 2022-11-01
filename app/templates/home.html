@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Weather Dashboard in Flask</h2>
+<h3>Created by Aidan Smith,
+Reviewed by Timothy Jupe</h3>
+<form id="weatherForm" action="/upload" method="post">
+    Location Zip Code: <input id="weatherInput" type="text" name="zipCode"><br>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="temp_unit" value="F" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+    F
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="temp_unit" value="C" id="flexRadioDefault2" checked>
+  <label class="form-check-label" for="flexRadioDefault2">
+    C
+  </label>
+</div>
+
+    <input id="weatherSubmit" type="Submit" value="Submit">
+
+</form>
+<h3>Dear user this is a small explanation on how to use my code. There will be two options, celsius and fahrenheit,
+You will choose one of these options and then enter a zip code of the desired location that you would like to know the current weather for.
+The results will show  your local time, what the weather feels like and the name of the location. </h3>
+<h3>Here are some example zipcodes that you are welcome to try;</h3>
+<h3>New York - 10001</h3>
+<h3>Beverly Hills - 90210</h3>
+<h3>California - 90001</h3>
+<h3>Colorado - 80001</h3>
+{% endblock %}

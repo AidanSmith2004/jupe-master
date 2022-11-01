@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+ <table id="data" class="table table-striped">
+   <thead>
+     <tr>
+       <th>Location</th>
+         <th>feels_like</th>
+         <th>temp</th>
+         <th>dt_obj</th>
+         <th>icon_url</th>
+         <th>weather</th>
+         <th>pressure</th>
+         <th>temp_min</th>
+         <th>temp_max</th>
+         <th>created</th>
+     </tr>
+   </thead>
+   <tbody>
+   </tbody>
+ </table>
+{% endblock %}
+{% block scripts %}
+ <script>
+   $(document).ready(function () {
+     $('#data').DataTable({
+       ajax: '/api/results',
+       pageLength: 25,
+       columns: [
+         {data: 'location'},
+         {data: 'feels_like'},
+         {data: 'temp'},
+         {data: 'dt_obj'},
+         {data: 'icon_url'},
+         {data: 'weather'},
+         {data: 'pressure'},
+         {data: 'temp_min'},
+         {data: 'temp_max'},
+         {data: 'created'}
+       ],
+     });
+   });
+ </script>
+{% endblock %}
+<!--<div id="weatherResults">-->
+<!--    <h3>Weather in {{ location }}</h3>-->
+<!--    <h2>{{ temp }}° </h2>-->
+<!--    <h3>{{ weather }}</h3>-->
+<!--    <img src="{{ icon_url }}" />-->
+<!--    <h4>Feels like: {{ feels_like }}° F</h4>-->
+<!--    <h4>Sunrise: {{ dt_obj }}</h4>-->
+<!--    <h4>{{ now }}</h4>-->
+<!--    <h4></h4>-->
+<!--</div>-->
